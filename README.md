@@ -1,2 +1,5 @@
-# applied-machine-learning-projects
-this repository is created for submission in the applied machine learning class.
+<h1 align="center">Applied Machine Learning Projects</h1>
+
+This repository was created to keep source code while following the course.
+
+## Thank You
