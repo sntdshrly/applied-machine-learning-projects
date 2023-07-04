@@ -19,16 +19,22 @@ Diabetes merupakan penyakit serius sehingga pentingnya untuk mendeteksi sedini m
 Bagian laporan ini mencakup:
 
 ### Problem Statements
+<p align="justify">
 - Bagaimana membuat model untuk mengidentifikasi pasien yang beresiko diabetes?
 - Bagaimana mengukur performa model untuk memprediksi pasien yang beresiko diabetes?
+</p>
 
 ### Goals
+<p align="justify">
 - Membuat model untuk mengidentifikasi pasien yang beresiko diabetes.
 - Mengukur performa model untuk memprediksi pasien yang beresiko diabetes.
+</p>
 
 ### Solution statements
+<p align="justify">
 - Membangun model `random forest` dengan menerapkan `hyperparameter tuning`
 - Mengukur performa model dengan metrik evaluasi.
+</p>
 
 ## Data Understanding
 Data yang digunakan dalam proyek ini bersumber dari [Kaggle](https://www.kaggle.com/datasets/iammustafatz/diabetes-prediction-dataset).
