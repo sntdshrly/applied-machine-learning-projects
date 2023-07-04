@@ -54,25 +54,25 @@ Tahapan yang akan dilakukan dalam mempersiapkan dataset yaitu:
 - Resampling menggunakan SMOTE dan Random Under Sampler: mengubah distribusi kelas pada dataset dengan tujuan untuk mengatasi ketidakseimbangan kelas (class imbalance). SMOTE (Synthetic Minority Over-sampling Technique) adalah metode resampling yang membuat sampel sintetis untuk kelas minoritas dengan menggabungkan fitur-fitur dari sampel kelas minoritas yang ada. Dengan menggunakan SMOTE, jumlah sampel pada kelas minoritas akan meningkat sehingga dapat mengurangi ketidakseimbangan kelas. Metode ini membantu meningkatkan kinerja model dalam memprediksi kelas minoritas. Sedangkan, Random Under Sampler adalah metode resampling yang secara acak mengurangi jumlah sampel pada kelas mayoritas agar sebanding dengan jumlah sampel pada kelas minoritas. Dengan mengurangi jumlah sampel pada kelas mayoritas, metode ini membantu mengatasi ketidakseimbangan kelas dengan mempertahankan sampel pada kelas minoritas yang ada. Tujuan dari Random Under Sampler adalah untuk mencegah overfitting pada kelas mayoritas dan meningkatkan performa model dalam memprediksi kelas minoritas.
 
 ## Modeling
-Pada tahapan pemodelan ini, kita menggunakan algoritma Random Forest Classifier untuk menyelesaikan permasalahan dalam proyek "Diabetes Prediction".
+Pada tahapan pemodelan ini, Penulis menggunakan algoritma Random Forest Classifier untuk menyelesaikan permasalahan dalam proyek "Diabetes Prediction".
 
 Tahapan yang dilakukan dalam pemodelan ini adalah sebagai berikut:
-- Membentuk model awal: Pertama, kita membuat model awal dengan menggunakan RandomForestClassifier tanpa mengatur parameter apapun. Model awal ini digunakan untuk melatih data yang telah diresampling `(X_train_resampled)` dan `(y_train_resampled)`.
-- Penentuan parameter: Setelah itu, kita menentukan parameter-parameter yang akan digunakan pada model Random Forest. Dalam contoh ini, kita menggunakan RandomizedSearchCV untuk mencari parameter terbaik dengan mencoba beberapa kombinasi secara acak. Parameter yang diuji adalah jumlah estimators `(n_estimators)`, kedalaman maksimum `(max_depth)`, minimum sampel split `(min_samples_split)`, dan minimum sampel leaf `(min_samples_leaf)`. Parameter-parameter ini digunakan untuk meningkatkan performa model dan menghindari overfitting.
+- Membentuk model awal: Pertama, Penulis membuat model awal dengan menggunakan RandomForestClassifier tanpa mengatur parameter apapun. Model awal ini digunakan untuk melatih data yang telah diresampling `(X_train_resampled)` dan `(y_train_resampled)`.
+- Penentuan parameter: Setelah itu, Penulis menentukan parameter-parameter yang akan digunakan pada model Random Forest. Dalam contoh ini, Penulis menggunakan RandomizedSearchCV untuk mencari parameter terbaik dengan mencoba beberapa kombinasi secara acak. Parameter yang diuji adalah jumlah estimators `(n_estimators)`, kedalaman maksimum `(max_depth)`, minimum sampel split `(min_samples_split)`, dan minimum sampel leaf `(min_samples_leaf)`. Parameter-parameter ini digunakan untuk meningkatkan performa model dan menghindari overfitting.
 - Pencarian parameter terbaik: Pada langkah ini, RandomizedSearchCV mencoba beberapa kombinasi parameter yang dijelaskan di atas dengan melakukan validasi silang `(cross-validation)` menggunakan 5-fold cross-validation `(cv=5)`. Dalam hal ini, RandomizedSearchCV mencoba 10 kombinasi parameter yang berbeda `(n_iter=10)` dan mencatat performa model untuk setiap kombinasi.
-- Memilih model terbaik: Setelah melakukan pencarian parameter, kita memilih model terbaik berdasarkan performa yang diukur. Model terbaik ini akan digunakan untuk melatih data yang telah dilakukan one hot encoding `(X_train_encoded)` dan target `(y_train)`.
+- Memilih model terbaik: Setelah melakukan pencarian parameter, Penulis memilih model terbaik berdasarkan performa yang diukur. Model terbaik ini akan digunakan untuk melatih data yang telah dilakukan one hot encoding `(X_train_encoded)` dan target `(y_train)`.
 
 ## Hyperparameter Tuning
 Proses improvement melalui hyperparameter tuning:
 
-Dalam langkah hyperparameter tuning, RandomizedSearchCV digunakan untuk mencari kombinasi terbaik dari parameter-parameter yang diuji. Dalam contoh ini, kita mencari nilai terbaik untuk n_estimators, max_depth, min_samples_split, dan min_samples_leaf.
+Dalam langkah hyperparameter tuning, RandomizedSearchCV digunakan untuk mencari kombinasi terbaik dari parameter-parameter yang diuji. Dalam contoh ini, Penulis mencari nilai terbaik untuk n_estimators, max_depth, min_samples_split, dan min_samples_leaf.
 
-Dengan melakukan hyperparameter tuning, kita dapat meningkatkan performa model dengan menemukan parameter yang optimal. Parameter yang optimal dapat membantu menghindari overfitting, meningkatkan akurasi, dan menghasilkan model yang lebih baik secara keseluruhan.
+Dengan melakukan hyperparameter tuning, Penulis dapat meningkatkan performa model dengan menemukan parameter yang optimal. Parameter yang optimal dapat membantu menghindari overfitting, meningkatkan akurasi, dan menghasilkan model yang lebih baik secara keseluruhan.
 
-Setelah proses hyperparameter tuning, kita mendapatkan model terbaik `(rf_best)` yang kemudian dilatih menggunakan data yang telah dilakukan one hot encoding `(X_train_encoded)` dan target `(y_train)`. Model terbaik ini kemudian dapat digunakan untuk melakukan prediksi pada data yang baru.
+Setelah proses hyperparameter tuning, Penulis mendapatkan model terbaik `(rf_best)` yang kemudian dilatih menggunakan data yang telah dilakukan one hot encoding `(X_train_encoded)` dan target `(y_train)`. Model terbaik ini kemudian dapat digunakan untuk melakukan prediksi pada data yang baru.
 
 ## Evaluation
-Dalam proyek ini, kita menggunakan beberapa metrik evaluasi untuk kasus klasifikasi, yaitu akurasi, presisi, recall, dan skor F1. Berikut adalah penjelasan singkat mengenai metrik-metrik tersebut:
+Dalam proyek ini, Penulis menggunakan beberapa metrik evaluasi untuk kasus klasifikasi, yaitu akurasi, presisi, recall, dan skor F1. Berikut adalah penjelasan singkat mengenai metrik-metrik tersebut:
 
 - Akurasi: Metrik ini mengukur sejauh mana model dapat mengklasifikasikan data dengan benar secara keseluruhan. Akurasi dihitung dengan membagi jumlah prediksi yang benar dengan total jumlah prediksi.
 
