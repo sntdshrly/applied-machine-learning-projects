@@ -86,7 +86,7 @@ Dalam proyek ini, Penulis menggunakan beberapa metrik evaluasi untuk kasus klasi
 - Recall: Recall, juga dikenal sebagai sensitivitas, mengukur sejauh mana model dapat mengidentifikasi secara benar semua instance positif yang ada dalam dataset. Recall dihitung dengan membagi jumlah prediksi positif yang benar dengan jumlah total instance positif yang sebenarnya.
 
 - F1 Score: F1 Score adalah rata-rata harmonik antara presisi dan recall. Skor F1 berguna untuk memperhitungkan baik presisi maupun recall dalam satu metrik yang konsisten. Skor F1 dihitung dengan menggunakan formula:
-$$ x = 2 * (presisi * recall)} \over (presisi + recall) $$
+$$\frac{2 \cdot (presisi \cdot recall)}{presisi + recall}$$
 
 ## Conclusion
 - Membuat model random forest dengan menerapkan hyperparameter tuning yaitu menggunakan randomized search dapat mengidentifikasi pasien yang beresiko diabetes.
