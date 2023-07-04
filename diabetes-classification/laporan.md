@@ -2,9 +2,10 @@
 
 ## Domain Proyek
 
-Penderita diabetes beresiko lebih tinggi pada kasus pasien COVID-19. Oleh karena itu, pentingnya untuk mendeteksi sedini mungkin penyakit diabetes berdasarkan latar belakang historis sehingga dapat diberi perawatan yang tepat.
+Diabetes merupakan penyakit serius sehingga pentingnya untuk mendeteksi sedini mungkin penyakit diabetes berdasarkan latar belakang historis sehingga dapat diberi perawatan yang tepat. Selain itu, penderita diabetes beresiko lebih tinggi pada kasus pasien COVID-19 [1]. WHO sendiri memprediksi bahwa jumlah penderita diabetes dari rentang waktu tahun 1980 sampai dengan 2014 meningkat kurang lebih empat kali lebih tinggi [2].
 
-[Sumber Referensi](https://bapin-ismki.e-journal.id/jimki/article/view/342)
+[1](https://bapin-ismki.e-journal.id/jimki/article/view/342)
+[2](http://eprints.poltekkesjogja.ac.id/557/3/BAB%20I.pdf)
 
 ## Business Understanding
 
@@ -89,5 +90,5 @@ Dalam proyek ini, Penulis menggunakan beberapa metrik evaluasi untuk kasus klasi
 $$\frac{2 \cdot (presisi \cdot recall)}{presisi + recall}$$
 
 ## Conclusion
-- Membuat model random forest dengan menerapkan hyperparameter tuning yaitu menggunakan randomized search dapat mengidentifikasi pasien yang beresiko diabetes.
+- Model random forest dengan menerapkan hyperparameter tuning (randomized search) dapat mengidentifikasi pasien yang beresiko diabetes.
 - Hasil `F1-Score` model random forest pada test set sebesar 97%.
