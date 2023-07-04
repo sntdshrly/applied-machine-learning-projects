@@ -4,10 +4,9 @@
 
 Diabetes merupakan penyakit serius sehingga pentingnya untuk mendeteksi sedini mungkin penyakit diabetes berdasarkan latar belakang historis sehingga dapat diberi perawatan yang tepat. Selain itu, penderita diabetes beresiko lebih tinggi pada kasus pasien COVID-19 [1]. WHO sendiri memprediksi bahwa jumlah penderita diabetes dari rentang waktu tahun 1980 sampai dengan 2014 meningkat kurang lebih empat kali lebih tinggi [2].
 
+*References*
 [1] [A. A. Panua, R. Zainuddin, Ekayanti Hafidah Ahmad, and Fitriani Sangkala, “Faktor Risiko Terjadinya Covid-19 Pada Penderita Diabetes Melitus Tipe 2,” vol. 10, no. 2, pp. 624–634, Dec. 2021, doi: https://doi.org/10.35816/jiskh.v10i2.668.](https://bapin-ismki.e-journal.id/jimki/article/view/342)
-‌
-
-[[2](http://eprints.poltekkesjogja.ac.id/557/3/BAB%20I.pdf)]
+[2] [Sartika Sumangkut, Wenny Supit, and Franly Onibala, JURNAL KEPERAWATAN, vol. 1, no. 1, 2013, doi: https://doi.org/10.35790/jkp.v1i1.2235.‌](https://bapin-ismki.e-journal.id/jimki/article/view/342)‌
 
 ## Business Understanding
 
