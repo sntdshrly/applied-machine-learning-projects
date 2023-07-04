@@ -22,7 +22,7 @@ Bagian laporan ini mencakup:
 <p align="justify">
 <ul>
 <li>
-  Bagaimana membuat model untuk mengidentifikasi pasien yang beresiko diabetes?</ul>
+Bagaimana membuat model untuk mengidentifikasi pasien yang beresiko diabetes?</ul>
 </li>
 <li>
 Bagaimana mengukur performa model untuk memprediksi pasien yang beresiko diabetes?
@@ -31,9 +31,13 @@ Bagaimana mengukur performa model untuk memprediksi pasien yang beresiko diabete
 
 ### Goals
 <p align="justify">
-- Membuat model untuk mengidentifikasi pasien yang beresiko diabetes.
-
-- Mengukur performa model untuk memprediksi pasien yang beresiko diabetes.
+<ul>
+<li>
+Membuat model untuk mengidentifikasi pasien yang beresiko diabetes.
+</li>
+<li>
+Mengukur performa model untuk memprediksi pasien yang beresiko diabetes.
+</li>
 </p>
 
 ### Solution statements
