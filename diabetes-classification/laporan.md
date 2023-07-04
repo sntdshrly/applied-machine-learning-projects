@@ -20,9 +20,13 @@ Bagian laporan ini mencakup:
 
 ### Problem Statements
 <p align="justify">
-<ul>Bagaimana membuat model untuk mengidentifikasi pasien yang beresiko diabetes?</ul>
-
-- Bagaimana mengukur performa model untuk memprediksi pasien yang beresiko diabetes?
+<ul>
+<li>
+  Bagaimana membuat model untuk mengidentifikasi pasien yang beresiko diabetes?</ul>
+</li>
+<li>
+Bagaimana mengukur performa model untuk memprediksi pasien yang beresiko diabetes?
+</li>
 </p>
 
 ### Goals
