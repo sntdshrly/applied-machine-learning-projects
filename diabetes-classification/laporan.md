@@ -42,7 +42,7 @@ Data yang digunakan dalam proyek ini bersumber dari [Kaggle](https://www.kaggle.
   - BMI 18.5-24.9 adalah normal
   - BMI 25-29.9 adalah kelebihan berat badan
   - BMI 30 atau lebih adalah obesitas.
-- HbA1c_level: kadar HbA1c (Hemoglobin A1c) adalah ukuran kadar gula darah rata-rata seseorang selama 2-3 bulan terakhir. Tingkat yang lebih tinggi menunjukkan risiko lebih besar terkena diabetes. Sebagian besar lebih dari 6,5% dari Tingkat HbA1c menunjukkan diabetes.
+- HbA1c_level: kadar HbA1c (Hemoglobin A1c) adalah ukuran kadar gula darah rata-rata seseorang selama 2-3 bulan terakhir. Tingkat yang lebih tinggi menunjukkan risiko lebih besar terkena diabetes. Sebagian besar lebih dari 6.5% dari Tingkat HbA1c menunjukkan diabetes.
 - blood_glucose_level: tingkat glukosa darah mengacu pada jumlah glukosa dalam aliran darah pada waktu tertentu. Kadar glukosa darah yang tinggi merupakan indikator utama diabetes.
 - diabetes: diabetes adalah variabel target yang akan diprediksi, dengan nilai 1 menunjukkan adanya diabetes dan 0 menunjukkan tidak adanya diabetes.
 
