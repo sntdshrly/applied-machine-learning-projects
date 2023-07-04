@@ -11,7 +11,7 @@ Diabetes merupakan penyakit serius sehingga pentingnya untuk mendeteksi sedini m
 [1] [A. A. Panua, R. Zainuddin, Ekayanti Hafidah Ahmad, and Fitriani Sangkala, “Faktor Risiko Terjadinya Covid-19 Pada Penderita Diabetes Melitus Tipe 2,” vol. 10, no. 2, pp. 624–634, Dec. 2021, doi: https://doi.org/10.35816/jiskh.v10i2.668.](https://bapin-ismki.e-journal.id/jimki/article/view/342)
 
 [2] [Sartika Sumangkut, Wenny Supit, and Franly Onibala, JURNAL KEPERAWATAN, vol. 1, no. 1, 2013, doi: https://doi.org/10.35790/jkp.v1i1.2235.‌](https://bapin-ismki.e-journal.id/jimki/article/view/342)‌
-<p align="justify">
+</p>
 
 ## Business Understanding
 
