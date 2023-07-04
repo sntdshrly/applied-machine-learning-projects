@@ -4,9 +4,9 @@
 
 Diabetes merupakan penyakit serius sehingga pentingnya untuk mendeteksi sedini mungkin penyakit diabetes berdasarkan latar belakang historis sehingga dapat diberi perawatan yang tepat. Selain itu, penderita diabetes beresiko lebih tinggi pada kasus pasien COVID-19 [1]. WHO sendiri memprediksi bahwa jumlah penderita diabetes dari rentang waktu tahun 1980 sampai dengan 2014 meningkat kurang lebih empat kali lebih tinggi [2].
 
-[[1](https://bapin-ismki.e-journal.id/jimki/article/view/342)]
+[[1](https://bapin-ismki.e-journal.id/jimki/article/view/342)] B. Pendahuluan and A. Belakang, Accessed: Jul. 04, 2023. [Online]. Available: http://eprints.poltekkesjogja.ac.id/557/3/BAB%20I.pdf
 
-[2](http://eprints.poltekkesjogja.ac.id/557/3/BAB%20I.pdf)
+[[2](http://eprints.poltekkesjogja.ac.id/557/3/BAB%20I.pdf)]
 
 ## Business Understanding
 
