@@ -5,7 +5,7 @@
 ## Domain Proyek
 
 Diabetes merupakan penyakit serius sehingga pentingnya untuk mendeteksi sedini mungkin penyakit diabetes berdasarkan latar belakang historis sehingga dapat diberi perawatan yang tepat. Selain itu, penderita diabetes beresiko lebih tinggi pada kasus pasien COVID-19 [1]. WHO sendiri memprediksi bahwa jumlah penderita diabetes dari rentang waktu tahun 1980 sampai dengan 2014 meningkat kurang lebih empat kali lebih tinggi [2]. Oleh karena itu, penting sekali untuk menanggulani permasalahan diabetes ini. Dengan menerapkan teknologi *machine learning* untuk memprediksi berdasarkan historis pengguna akan lebih mudah untuk mendeteksi permasalahan diabetes sedini mungkin.
-
+</p>
 **References**
 
 [1] [A. A. Panua, R. Zainuddin, Ekayanti Hafidah Ahmad, and Fitriani Sangkala, “Faktor Risiko Terjadinya Covid-19 Pada Penderita Diabetes Melitus Tipe 2,” vol. 10, no. 2, pp. 624–634, Dec. 2021, doi: https://doi.org/10.35816/jiskh.v10i2.668.](https://bapin-ismki.e-journal.id/jimki/article/view/342)
