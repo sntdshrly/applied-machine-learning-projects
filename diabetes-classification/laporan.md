@@ -1,9 +1,9 @@
 # Laporan Proyek Machine Learning - Sherly Santiadi
 
-
-<p align="justify">
   
 ## Domain Proyek
+<p align="justify">
+
 Diabetes merupakan penyakit serius sehingga pentingnya untuk mendeteksi sedini mungkin penyakit diabetes berdasarkan latar belakang historis sehingga dapat diberi perawatan yang tepat. Selain itu, penderita diabetes beresiko lebih tinggi pada kasus pasien COVID-19 [1]. WHO sendiri memprediksi bahwa jumlah penderita diabetes dari rentang waktu tahun 1980 sampai dengan 2014 meningkat kurang lebih empat kali lebih tinggi [2]. Oleh karena itu, penting sekali untuk menanggulani permasalahan diabetes ini. Dengan menerapkan teknologi *machine learning* untuk memprediksi berdasarkan historis pengguna akan lebih mudah untuk mendeteksi permasalahan diabetes sedini mungkin.
 
 **References**
@@ -11,6 +11,7 @@ Diabetes merupakan penyakit serius sehingga pentingnya untuk mendeteksi sedini m
 [1] [A. A. Panua, R. Zainuddin, Ekayanti Hafidah Ahmad, and Fitriani Sangkala, “Faktor Risiko Terjadinya Covid-19 Pada Penderita Diabetes Melitus Tipe 2,” vol. 10, no. 2, pp. 624–634, Dec. 2021, doi: https://doi.org/10.35816/jiskh.v10i2.668.](https://bapin-ismki.e-journal.id/jimki/article/view/342)
 
 [2] [Sartika Sumangkut, Wenny Supit, and Franly Onibala, JURNAL KEPERAWATAN, vol. 1, no. 1, 2013, doi: https://doi.org/10.35790/jkp.v1i1.2235.‌](https://bapin-ismki.e-journal.id/jimki/article/view/342)‌
+<p align="justify">
 
 ## Business Understanding
 
@@ -93,8 +94,6 @@ Dalam proyek ini, Penulis menggunakan beberapa metrik evaluasi untuk kasus klasi
 
 - F1 Score: F1 Score adalah rata-rata harmonik antara presisi dan recall. Skor F1 berguna untuk memperhitungkan baik presisi maupun recall dalam satu metrik yang konsisten. Skor F1 dihitung dengan menggunakan formula:
 $$\frac{2 \cdot (presisi \cdot recall)}{presisi + recall}$$
-
-</p>
 
 ## Conclusion
 - Model random forest dengan menerapkan hyperparameter tuning (randomized search) dapat mengidentifikasi pasien yang beresiko diabetes.
