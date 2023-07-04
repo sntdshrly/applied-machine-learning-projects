@@ -24,6 +24,11 @@ Bagian laporan ini mencakup:
 
 ## Data Understanding
 Data yang digunakan dalam proyek ini bersumber dari [Kaggle](https://www.kaggle.com/datasets/iammustafatz/diabetes-prediction-dataset).
+| gender | age  | hypertension | heart_disease | smoking_history | bmi   | HbA1c_level | blood_glucose_level | diabetes |
+|--------|------|--------------|---------------|-----------------|-------|-------------|---------------------|----------|
+| Female | 80.0 | 0            | 1             | never           | 25.19 | 6.6         | 140                 | 0        |
+| Male   | 54.0 | 1            | 0             | No Info         | 27.32 | 5.7         | 80                  | 1        |
+| ...    | ...  | ...          | ...           | ...             | ...   | ...         | ...                 | ...      |
 
 ### Variabel-variabel pada Diabetes dataset adalah sebagai berikut:
 - gender: mengacu pada jenis kelamin biologis individu, yang dapat berdampak pada kerentanan mereka terhadap diabetes. Ada tiga kategori di dalamnya pria, wanita dan lainnya.
