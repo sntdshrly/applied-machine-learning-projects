@@ -5,12 +5,6 @@
 Diabetes merupakan penyakit serius sehingga pentingnya untuk mendeteksi sedini mungkin penyakit diabetes berdasarkan latar belakang historis sehingga dapat diberi perawatan yang tepat. Selain itu, penderita diabetes beresiko lebih tinggi pada kasus pasien COVID-19 [1]. WHO sendiri memprediksi bahwa jumlah penderita diabetes dari rentang waktu tahun 1980 sampai dengan 2014 meningkat kurang lebih empat kali lebih tinggi [2]. Oleh karena itu, penting sekali untuk menanggulani permasalahan diabetes ini. Dengan menerapkan teknologi *machine learning* untuk memprediksi berdasarkan historis pengguna akan lebih mudah untuk mendeteksi permasalahan diabetes sedini mungkin.
 
 
-**References**
-
-[1] [A. A. Panua, R. Zainuddin, Ekayanti Hafidah Ahmad, and Fitriani Sangkala, “Faktor Risiko Terjadinya Covid-19 Pada Penderita Diabetes Melitus Tipe 2,” vol. 10, no. 2, pp. 624–634, Dec. 2021, doi: https://doi.org/10.35816/jiskh.v10i2.668.](https://bapin-ismki.e-journal.id/jimki/article/view/342)
-
-[2] [Sartika Sumangkut, Wenny Supit, and Franly Onibala, JURNAL KEPERAWATAN, vol. 1, no. 1, 2013, doi: https://doi.org/10.35790/jkp.v1i1.2235.‌](https://bapin-ismki.e-journal.id/jimki/article/view/342)‌
-
 ## Business Understanding
 
 Bagian laporan ini mencakup:
@@ -52,6 +46,10 @@ Data yang digunakan dalam proyek ini bersumber dari [Kaggle](https://www.kaggle.
 Tahapan yang akan dilakukan dalam mengeksplor dataset yaitu:
 - *Gathering Data*
 
+*Gathering Data* merupakan tahap awal sebelum membuat model *machine learning*, pada tahapan ini Penulis mencoba *load* dataset yang digunakan dan memperhatikan secara general kolom serta baris seperti pada Tabel 1.
+
+Tabel 1. Diabetes Dataset
+
 | gender | age  | hypertension | heart_disease | smoking_history | bmi   | HbA1c_level | blood_glucose_level | diabetes |
 |--------|------|--------------|---------------|-----------------|-------|-------------|---------------------|----------|
 | Female | 80.0 | 0            | 1             | never           | 25.19 | 6.6         | 140                 | 0        |
@@ -59,6 +57,8 @@ Tahapan yang akan dilakukan dalam mengeksplor dataset yaitu:
 | ...    | ...  | ...          | ...           | ...             | ...   | ...         | ...                 | ...      |
 
 <sub>100000 rows × 9 columns</sub>
+
+Kemudian hal lainnya yang perlu diperhatikan adalah perhitungan statistika dari dataset yang digunakan seperti pada Tabel 2.
 - *Assessing Data*
   - Apakah ada *missing value*? Pada dataset yang digunakan dalam proyek ini tidak ada *missing value*.
   - Apakah ada data duplikat? Pada dataset yang digunakan dalam proyek ini terdapat duplikasi data sebaganyak 3854 data.
@@ -72,6 +72,7 @@ Tahapan yang akan dilakukan dalam mengeksplor dataset yaitu:
   - 75% adalah kuartil ketiga.
   - Max adalah nilai maksimum.
 
+Tabel 2. Hasil Perhitungan Statistik Dataset
 
 |       | age          | ... | diabetes     |
 |-------|--------------|-----|--------------|
@@ -86,9 +87,11 @@ Tahapan yang akan dilakukan dalam mengeksplor dataset yaitu:
 
 - Melihat Distribusi Kolom
 
-Berikut merupakan salah satu contoh visualisasi menggunakan *box plot*, dari hasil visualisasi di bawah ini dapat diketahui bahwa  rentang umur seseorang mengalami diabetes yaitu diantara 50 - 80.
+Pada Gambar 1 merupakan salah satu contoh visualisasi menggunakan *box plot*, dari hasil visualisasi di bawah ini dapat diketahui bahwa  rentang umur seseorang mengalami diabetes yaitu diantara 50 - 80.
 
 ![Box Plot](https://github.com/sntdshrly/applied-machine-learning-projects/assets/71547739/182fd079-4e78-4184-bdc5-140350158ee8)
+
+Gambar 1. Distribusi Kolom dengan Variabel Diabetes dan Age
 
 ## Data Preparation
 
@@ -124,12 +127,16 @@ $$\frac{2 \cdot (presisi \cdot recall)}{presisi + recall}$$
 
 ## Conclusion
 - Model *random forest* dengan menerapkan *hyperparameter tuning* (*randomized search*) dapat mengidentifikasi pasien yang beresiko diabetes.
-- Hasil F1-Score model random forest pada test set sebesar 97% dapat dilihat pada grafik ROC di bawah ini.
+- Hasil F1-Score model random forest pada test set sebesar 97% dapat dilihat pada Gambar 2.
 
 ![Grafik ROC](https://github.com/sntdshrly/applied-machine-learning-projects/assets/71547739/5f4f296d-209d-40a6-a2f5-4ebaa54837fb)
 
----
+Gambar 2. Grafik ROC
+
+
 ## Additional Information
+
+Tabel 3. Metrik Evaluasi
 
 |              | precision | recall | f1-score | support |
 |--------------|-----------|--------|----------|---------|
@@ -139,7 +146,7 @@ $$\frac{2 \cdot (presisi \cdot recall)}{presisi + recall}$$
 | macro avg    | 0.98      | 0.84   | 0.90     | 19044   |
 | weighted avg | 0.97      | 0.97   | 0.97     | 19044   |
 
-Berdasarkan hasil proyek dan metrik evaluasi yang digunakan, kita dapat melihat bahwa model yang telah dilatih memberikan hasil yang baik. Berikut adalah analisis berdasarkan metrik-metrik evaluasi yang digunakan:
+Berdasarkan hasil proyek dan metrik evaluasi yang digunakan seperti pada Tabel 3, dapat dilihat bahwa model yang telah dilatih memberikan hasil yang baik. Berikut adalah analisis berdasarkan metrik-metrik evaluasi yang digunakan:
 
 - Akurasi: Model memiliki akurasi sebesar 97% pada data validasi (15235 sampel) dan 97% pada data pengujian (19044 sampel). Ini berarti model dapat mengklasifikasikan data dengan benar dengan tingkat akurasi yang tinggi.
 - Presisi: Model memiliki presisi sebesar 97% untuk kelas 0 (tidak diabetes) dan 98% untuk kelas 1 (diabetes) pada data validasi dan data pengujian. Hal ini menunjukkan bahwa model memberikan sedikit sekali kesalahan dalam mengklasifikasikan data sebagai kelas 0 atau kelas 1.
@@ -147,3 +154,12 @@ Berdasarkan hasil proyek dan metrik evaluasi yang digunakan, kita dapat melihat 
 - F1 Score: F1 Score untuk kelas 0 adalah 98% pada data validasi dan data pengujian, sementara untuk kelas 1 adalah 81% pada data validasi dan data pengujian. F1 Score yang tinggi menunjukkan keseimbangan antara presisi dan recall.
 
 Secara keseluruhan, model *Random Forest Classifier* yang telah dilatih memberikan hasil yang baik dengan tingkat akurasi yang tinggi dan presisi yang baik untuk kedua kelas. Namun, terdapat penurunan recall dan F1 Score untuk kelas 1, yang dapat menunjukkan bahwa **model memiliki kesulitan dalam mengidentifikasi instance-instance yang termasuk dalam kelas 1**.
+
+---
+
+**References**
+
+[1] [A. A. Panua, R. Zainuddin, Ekayanti Hafidah Ahmad, and Fitriani Sangkala, “Faktor Risiko Terjadinya Covid-19 Pada Penderita Diabetes Melitus Tipe 2,” vol. 10, no. 2, pp. 624–634, Dec. 2021, doi: https://doi.org/10.35816/jiskh.v10i2.668.](https://bapin-ismki.e-journal.id/jimki/article/view/342)
+
+[2] [Sartika Sumangkut, Wenny Supit, and Franly Onibala, JURNAL KEPERAWATAN, vol. 1, no. 1, 2013, doi: https://doi.org/10.35790/jkp.v1i1.2235.‌](https://bapin-ismki.e-journal.id/jimki/article/view/342)‌
+
