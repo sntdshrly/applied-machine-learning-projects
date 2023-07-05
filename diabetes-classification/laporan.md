@@ -97,19 +97,21 @@ Selain itu, Penulis juga melakukan visualiasi terhadap variabel `gender` seperti
 - Other sebanyak 18 data.
 Namun, karena pada nilai `other` proporsi datanya relatif sedikit dibanding `female` dan `male` maka nilai tersebut dihapus dari dataframe.
 
-![Data Gender](https://github.com/sntdshrly/applied-machine-learning-projects/assets/71547739/e5ca9453-c4e7-4690-8bde-a776020a9774)
+![Data Gender](https://github.com/sntdshrly/applied-machine-learning-projects/assets/71547739/4e684737-d550-4e1c-8379-8490448cd18b)
 
 Gambar 2. Distribusi Gender
 
 Gambar 3 merupakan hasil visualisasi terhadap kolom `age` untuk mengetahui distribusi atau sebaran data yang digunakan dalam proyek ini. Hasilnya adalah rentang usia yang ada pada proyek ini tersebar dari 0 hingga 80.
 
-![Data Age](https://github.com/sntdshrly/applied-machine-learning-projects/assets/71547739/c653e8aa-6e2f-41eb-ab03-3bc1c35cbc3f)
+![Data Age](https://github.com/sntdshrly/applied-machine-learning-projects/assets/71547739/9c55646a-2a80-4dad-8192-c1272f0b2a30)
+
 
 Gambar 3. Distribusi Age
 
 Gambar 4 menunjukan bahwa label di dalam proyek sangatlah tidak seimbang, oleh karena itu pada tahap selanjutnya akan dilakukan *resampling* dataset untuk menangani masalah *imbalanced dataset*.
 
-![Data Diabetes](https://github.com/sntdshrly/applied-machine-learning-projects/assets/71547739/2fc97909-f4e3-4f55-8444-5190ed5341d4)
+![Data Diabetes](https://github.com/sntdshrly/applied-machine-learning-projects/assets/71547739/10d588ee-433e-44eb-abc3-bb018112993b)
+
 
 Gambar 4. Distribusi Diabetes
 
@@ -123,7 +125,8 @@ Gambar 5 menunjukan korelasi atau hubungan antar variabel, hubungan yang kuat di
 6. `heart_disease`
 
 
-![Matriks Korelasi](https://github.com/sntdshrly/applied-machine-learning-projects/assets/71547739/39104f78-7b62-4f29-9465-644d72dc6d1e)
+![Matriks Korelasi](https://github.com/sntdshrly/applied-machine-learning-projects/assets/71547739/a04645ff-127c-4fbd-bfb4-5fc29a298ea1)
+
 
 Gambar 5. Matriks Korelasi
 
@@ -165,7 +168,8 @@ $$\frac{2 \cdot (presisi \cdot recall)}{presisi + recall}$$
 - Model *random forest* dengan menerapkan *hyperparameter tuning* (*randomized search*) dapat mengidentifikasi pasien yang beresiko diabetes.
 - Hasil F1-Score model random forest pada test set sebesar 97% dapat dilihat pada Gambar 6.
 
-![Grafik ROC](https://github.com/sntdshrly/applied-machine-learning-projects/assets/71547739/5f4f296d-209d-40a6-a2f5-4ebaa54837fb)
+![Grafik ROC](https://github.com/sntdshrly/applied-machine-learning-projects/assets/71547739/14979018-24b1-4a42-8766-2ac7786687c5)
+
 
 Gambar 6. Grafik ROC
 
