@@ -87,7 +87,7 @@ Tabel 2. Hasil Perhitungan Statistik Dataset
 
 Pada Gambar 1 merupakan salah satu contoh visualisasi menggunakan *box plot*, dari hasil visualisasi di bawah ini dapat diketahui bahwa  rentang umur seseorang mengalami diabetes yaitu diantara 50 - 80.
 
-![Box Plot](https://github.com/sntdshrly/applied-machine-learning-projects/assets/71547739/182fd079-4e78-4184-bdc5-140350158ee8)
+![Box Plot](https://github.com/sntdshrly/applied-machine-learning-projects/assets/71547739/00da1487-03fb-4707-b1d3-9f17b6dd3cc9)
 
 Gambar 1. Distribusi Kolom dengan Variabel Diabetes dan Age
 
