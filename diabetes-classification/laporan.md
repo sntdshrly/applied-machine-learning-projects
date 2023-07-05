@@ -7,8 +7,6 @@ Diabetes merupakan penyakit serius sehingga pentingnya untuk mendeteksi sedini m
 
 ## Business Understanding
 
-Bagian laporan ini mencakup:
-
 ### Problem Statements
 
 - Bagaimana membuat model *machine learning* untuk mengidentifikasi pasien yang beresiko diabetes?
@@ -93,6 +91,43 @@ Pada Gambar 1 merupakan salah satu contoh visualisasi menggunakan *box plot*, da
 
 Gambar 1. Distribusi Kolom dengan Variabel Diabetes dan Age
 
+Selain itu, Penulis juga melakukan visualiasi terhadap variabel `gender` seperti pada Gambar 2. Visualisasi pada Gambar 2, merupakan hasil manipulasi data yang sebelumnya data tersebut memiliki tiga *unique value* yaitu:
+- Female sebanyak 56161 data.
+- Male sebanyak 39967 data.
+- Other sebanyak 18 data.
+Namun, karena pada nilai `other` proporsi datanya relatif sedikit dibanding `female` dan `male` maka nilai tersebut dihapus dari dataframe.
+
+![Data Gender](https://github.com/sntdshrly/applied-machine-learning-projects/assets/71547739/e5ca9453-c4e7-4690-8bde-a776020a9774)
+
+Gambar 2. Distribusi Gender
+
+Gambar 3 merupakan hasil visualisasi terhadap kolom `age` untuk mengetahui distribusi atau sebaran data yang digunakan dalam proyek ini. Hasilnya adalah rentang usia yang ada pada proyek ini tersebar dari 0 hingga 80.
+
+![Data Age](https://github.com/sntdshrly/applied-machine-learning-projects/assets/71547739/c653e8aa-6e2f-41eb-ab03-3bc1c35cbc3f)
+
+Gambar 3. Distribusi Age
+
+Gambar 4 menunjukan bahwa label di dalam proyek sangatlah tidak seimbang, oleh karena itu pada tahap selanjutnya akan dilakukan *resampling* dataset untuk menangani masalah *imbalanced dataset*.
+
+![Data Diabetes](https://github.com/sntdshrly/applied-machine-learning-projects/assets/71547739/2fc97909-f4e3-4f55-8444-5190ed5341d4)
+
+Gambar 4. Distribusi Diabetes
+
+Gambar 5 menunjukan korelasi atau hubungan antar variabel, hubungan yang kuat ditandai dengan nilai yang mendekati +1 (korelasi positif) atau -1 (korelasi negatif) sedangkan, tidak adanya korelasi antar variabel ditandai dengan nilai mendekati 0. Dari matriks korelasi ditemukan bahwa kolom yang memiliki korelasi positif dengan kolom diabetes diurutkan dari yang paling kuat hingga lemah sebagai berikut:
+
+1. `blood_glucose_level`
+2. `HbA1c_level`
+3. `age`
+4. `bmi`
+5. `hypertension`
+6. `heart_disease`
+
+
+![Matriks Korelasi](https://github.com/sntdshrly/applied-machine-learning-projects/assets/71547739/39104f78-7b62-4f29-9465-644d72dc6d1e)
+
+Gambar 5. Matriks Korelasi
+
+
 ## Data Preparation
 
 Tahapan yang akan dilakukan dalam mempersiapkan dataset yaitu:
@@ -126,15 +161,22 @@ Dalam proyek ini, Penulis menggunakan beberapa metrik evaluasi untuk kasus klasi
 $$\frac{2 \cdot (presisi \cdot recall)}{presisi + recall}$$
 
 ## Conclusion
+
 - Model *random forest* dengan menerapkan *hyperparameter tuning* (*randomized search*) dapat mengidentifikasi pasien yang beresiko diabetes.
-- Hasil F1-Score model random forest pada test set sebesar 97% dapat dilihat pada Gambar 2.
+- Hasil F1-Score model random forest pada test set sebesar 97% dapat dilihat pada Gambar 6.
 
 ![Grafik ROC](https://github.com/sntdshrly/applied-machine-learning-projects/assets/71547739/5f4f296d-209d-40a6-a2f5-4ebaa54837fb)
 
-Gambar 2. Grafik ROC
+Gambar 6. Grafik ROC
 
+Berdasarkan hasil proyek dan metrik evaluasi yang digunakan seperti pada Tabel 3, dapat dilihat bahwa model yang telah dilatih memberikan hasil yang baik. Berikut adalah analisis berdasarkan metrik-metrik evaluasi yang digunakan:
 
-## Additional Information
+- Akurasi: Model memiliki akurasi sebesar 97% pada data validasi (15235 sampel) dan 97% pada data pengujian (19044 sampel). Ini berarti model dapat mengklasifikasikan data dengan benar dengan tingkat akurasi yang tinggi.
+- Presisi: Model memiliki presisi sebesar 97% untuk kelas 0 (tidak diabetes) dan 98% untuk kelas 1 (diabetes) pada data validasi dan data pengujian. Hal ini menunjukkan bahwa model memberikan sedikit sekali kesalahan dalam mengklasifikasikan data sebagai kelas 0 atau kelas 1.
+- Recall: Model memiliki recall sebesar 100% untuk kelas 0 dan 68% untuk kelas 1 pada data validasi dan data pengujian. Ini berarti model mampu mengidentifikasi secara benar semua instance yang termasuk dalam kelas 0, tetapi memiliki tingkat recall yang lebih rendah untuk kelas 1.
+- F1 Score: F1 Score untuk kelas 0 adalah 98% pada data validasi dan data pengujian, sementara untuk kelas 1 adalah 81% pada data validasi dan data pengujian. F1 Score yang tinggi menunjukkan keseimbangan antara presisi dan recall.
+
+Secara keseluruhan, model *Random Forest Classifier* yang telah dilatih memberikan hasil yang baik dengan tingkat akurasi yang tinggi dan presisi yang baik untuk kedua kelas. Namun, terdapat penurunan recall dan F1 Score untuk kelas 1, yang dapat menunjukkan bahwa **model memiliki kesulitan dalam mengidentifikasi instance-instance yang termasuk dalam kelas 1**.
 
 Tabel 3. Metrik Evaluasi
 
@@ -146,18 +188,10 @@ Tabel 3. Metrik Evaluasi
 | macro avg    | 0.98      | 0.84   | 0.90     | 19044   |
 | weighted avg | 0.97      | 0.97   | 0.97     | 19044   |
 
-Berdasarkan hasil proyek dan metrik evaluasi yang digunakan seperti pada Tabel 3, dapat dilihat bahwa model yang telah dilatih memberikan hasil yang baik. Berikut adalah analisis berdasarkan metrik-metrik evaluasi yang digunakan:
-
-- Akurasi: Model memiliki akurasi sebesar 97% pada data validasi (15235 sampel) dan 97% pada data pengujian (19044 sampel). Ini berarti model dapat mengklasifikasikan data dengan benar dengan tingkat akurasi yang tinggi.
-- Presisi: Model memiliki presisi sebesar 97% untuk kelas 0 (tidak diabetes) dan 98% untuk kelas 1 (diabetes) pada data validasi dan data pengujian. Hal ini menunjukkan bahwa model memberikan sedikit sekali kesalahan dalam mengklasifikasikan data sebagai kelas 0 atau kelas 1.
-- Recall: Model memiliki recall sebesar 100% untuk kelas 0 dan 68% untuk kelas 1 pada data validasi dan data pengujian. Ini berarti model mampu mengidentifikasi secara benar semua instance yang termasuk dalam kelas 0, tetapi memiliki tingkat recall yang lebih rendah untuk kelas 1.
-- F1 Score: F1 Score untuk kelas 0 adalah 98% pada data validasi dan data pengujian, sementara untuk kelas 1 adalah 81% pada data validasi dan data pengujian. F1 Score yang tinggi menunjukkan keseimbangan antara presisi dan recall.
-
-Secara keseluruhan, model *Random Forest Classifier* yang telah dilatih memberikan hasil yang baik dengan tingkat akurasi yang tinggi dan presisi yang baik untuk kedua kelas. Namun, terdapat penurunan recall dan F1 Score untuk kelas 1, yang dapat menunjukkan bahwa **model memiliki kesulitan dalam mengidentifikasi instance-instance yang termasuk dalam kelas 1**.
 
 ---
 
-**References**
+**Daftar Pustaka**
 
 [1] [A. A. Panua, R. Zainuddin, Ekayanti Hafidah Ahmad, and Fitriani Sangkala, “Faktor Risiko Terjadinya Covid-19 Pada Penderita Diabetes Melitus Tipe 2,” vol. 10, no. 2, pp. 624–634, Dec. 2021, doi: https://doi.org/10.35816/jiskh.v10i2.668.](https://bapin-ismki.e-journal.id/jimki/article/view/342)
 
