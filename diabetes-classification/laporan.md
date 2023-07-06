@@ -163,10 +163,7 @@ Dalam proyek ini, Penulis menggunakan beberapa metrik evaluasi untuk kasus klasi
 - F1 Score: F1 Score adalah rata-rata harmonik antara presisi dan recall. Skor F1 berguna untuk memperhitungkan baik presisi maupun recall dalam satu metrik yang konsisten. Skor F1 dihitung dengan menggunakan formula:
 $$\frac{2 \cdot (presisi \cdot recall)}{presisi + recall}$$
 
-## Conclusion
-
-- Model *random forest* dengan menerapkan *hyperparameter tuning* (*randomized search*) dapat mengidentifikasi pasien yang beresiko diabetes.
-- Hasil F1-Score model random forest pada test set sebesar 97% dapat dilihat pada Gambar 6.
+Hasil F1-Score model random forest pada test set sebesar 97% dapat dilihat pada Gambar 6.
 
 ![Grafik ROC](https://github.com/sntdshrly/applied-machine-learning-projects/assets/71547739/14979018-24b1-4a42-8766-2ac7786687c5)
 
@@ -192,6 +189,10 @@ Tabel 3. Metrik Evaluasi
 | macro avg    | 0.98      | 0.84   | 0.90     | 19044   |
 | weighted avg | 0.97      | 0.97   | 0.97     | 19044   |
 
+
+## Conclusion
+
+Dengan mengimplementasikan salah satu algoritma *machine learning* yaitu *random forest* dan juga menerapkan *hyperparameter tuning* menggunakan *Randomized Search*, model dapat mendeteksi resiko pengguna mengalami diabetes atau tidak berdasarkan data historis yang diinput. Model belajar melalui beberapa variabel diantaranya adalah: jenis kelamin, usia, riwayat hipertensi, riwayat penyakit jantung, riwayat merokok, indeks massa tubuh (BMI), kadar HbA1c, dan tingkat glukosa darah. Selain itu, Penulis juga berhasil mengukur performa model menggunakan metrik evaluasi yaitu dengan menggunakan F1-Score, model memperoleh akurasi sebesar 97%. Data yang dipelajari oleh model berasal dari sumber data yang dapat diakses publik, yaitu Kaggle, dan Penulis telah melakukan beberapa tahap exploratory data analysis (EDA) untuk memahami karakteristik data tersebut. EDA yang dilakukan mencakup analisis statistik seperti perhitungan rata-rata, standar deviasi, nilai minimum, kuartil, dan maksimum untuk setiap kolom. Selain itu, visualisasi juga digunakan untuk memahami distribusi data, seperti menggunakan box plot untuk rentang usia penderita diabetes dan grafik batang untuk distribusi jenis kelamin.
 
 ---
 
