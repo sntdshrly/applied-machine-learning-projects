@@ -59,6 +59,7 @@ Tabel 1. Book Recommendation Dataset
 | 276725  | 034545104X | 0           | Flesh Tones: A Novel | M. J. Rose  | 2002                | Ballantine Books | http://images.amazon.com/images/P/034545104X.0... | http://images.amazon.com/images/P/034545104X.0... | http://images.amazon.com/images/P/034545104X.0... | tyler, texas, usa     | NaN  |
 | 2313    | 034545104X | 5           | Flesh Tones: A Novel | M. J. Rose  | 2002                | Ballantine Books | http://images.amazon.com/images/P/034545104X.0... | http://images.amazon.com/images/P/034545104X.0... | http://images.amazon.com/images/P/034545104X.0... | cincinnati, ohio, usa | 23.0 |
 | ...     | ...        | ...         | ...                  | ...         | ...                 | ...              | ...                                               | ...                                               | ...                                               | ...                   | ...  |
+
 <sub>1031136 rows × 12 columns</sub>
 
 Kemudian hal lainnya yang perlu diperhatikan adalah perhitungan statistika dari dataset yang digunakan seperti pada Tabel 2, Tabel 3, dan Tabel 4.
