@@ -182,7 +182,26 @@ Tabel 7. Hasil Top-5 Recommendation
 
 
 ## Evaluation
-Dalam proyek ini, Penulis menggunakan beberapa metrik evaluasi untuk kasus rekomendasi, yaitu akurasi, presisi, recall, dan skor F1. Berikut adalah penjelasan singkat mengenai metrik-metrik tersebut:
+Dalam proyek ini, Penulis menggunakan beberapa metrik evaluasi untuk kasus rekomendasi, yaitu presisi, recall, MAP@0.5 seperti pada Tabel 8. Untuk *ground truth* yang digunakan menggunakan filtering seperti snippet di bawah ini:
+```
+books[books['book_title'].str.contains("Chicken Soup")]['book_title'].tolist()
+```
+Tabel 8. Hasil Evaluasi
+
+| Presisi | Recall              | MAP@5               |
+|---------|---------------------|---------------------|
+| 1.0     | 0.13157894736842105 | 0.13157894736842105 |
+
+Melihat hasil presisi 1.0 dapat diartikan bahwa semua rekomendasi yang diberikan untuk judul buku "Chicken Soup for the Preteen Soul - 101 Stories of Changes, Choices and Growing Up for Kids, ages 10-13" benar-benar relevan. Sedangkan melihat hasil recall 0.13 berarti sistem rekomendasi Penulis dapat menemukan 13% dari buku-buku yang relecan. Hasil MAP@5 merupakan hasil rata-rata presisi pada 5 posisi teratas di dalam sistem rekomendasi dan di dalam proyek ini MAP@5 yang dihasilkan sebesar 13%.
+
+## Conclution
+Dengan mengimplementasikan salah satu algoritma machine learning yaitu *content-based filtering*, model dapat memberikan lima rekomendasi buku yang relevan dari histori judul buku yang pernah dipinjam oleh pengguna. Model belajar menggunakan pendekatan TF-IDF dan *cosine similarity*. Selain itu, Penulis juga berhasil mengukur performa model menggunakan metrik evaluasi yaitu dengan menggunakan presisi, recall, dan MAP.
+Model memperoleh:
+- Presisi: 1.0
+- Recall : 0.13157894736842105
+- MAP@5: 0.13157894736842105
+
+Data yang dipelajari oleh model berasal dari sumber data yang dapat diakses publik, yaitu Kaggle, dan Penulis telah melakukan beberapa tahap exploratory data analysis (EDA) untuk memahami karakteristik data tersebut. EDA yang dilakukan mencakup analisis statistik seperti perhitungan rata-rata, standar deviasi, nilai minimum, kuartil, dan maksimum untuk setiap kolom. Selain itu, visualisasi juga digunakan untuk memahami distribusi data menggunakan diagram batang.
 
 ---
 **Daftar Pustaka**
