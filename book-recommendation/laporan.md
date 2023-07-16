@@ -200,7 +200,7 @@ Tahapan yang akan dilakukan dalam mempersiapkan dataset yaitu:
   isbn = books['ISBN'].tolist()
   ```
 
-  Snippet di atas digunakan untuk mengkonversi kolom `ISBN` dari DataFrame `books` menjadi list. Proses yang sama dilakukan juga untuk kolom `Book-Title`, `Book-Author`, `Year-Of-Publication`, `Publisher`, `Image-URL-S`, `Image-URL-M`, dan `Image-URL-L` menggunakan metode `tolist()`.
+  Snippet di atas digunakan untuk mengkonversi kolom `ISBN` dari DataFrame `books` menjadi list. Proses yang sama dilakukan juga untuk kolom `Book-Title`, `Book-Author`, `Year-Of-Publication`, `Publisher`, `Image-URL-S`, `Image-URL-M`, dan `Image-URL-L` menggunakan fungsi `tolist()`.
 
 - Membuat Dictionary: Digunakan untuk menentukan pasangan *key-value* pada dataset.
 
