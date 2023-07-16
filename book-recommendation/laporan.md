@@ -1,25 +1,25 @@
 # Laporan Proyek Machine Learning - Sherly Santiadi
 
 ## Project Overview
-Sistem rekomendasi dapat dimanfaatkan dalam kunjungan perpustakaan. Tujuan memanfaatkan sistem rekomendasi adalah supaya pengunjung dapat diberikan rekomendasi buku yang sesuai dengan minat bacaan pengunjung. Hal ini dapat memudahkan pustakawan untuk lebih efektif dan efisien dalam memberikan rekomendasi kepada pengunjung perpustakaan [1]. Penerapan sistem rekomendasi menggunakan *content based filtering* sudah pernah diimplementasikan dalam sistem rekomendasi film oleh Muhammad Fajriansyah, dkk. Di dalam jurnal, dituliskan bahwa untuk memndapatkan hasil rekomendasi dengan algoritma *content based filtering* perlu dilakukan pembobotan menggunakan metode TF-IDF dan juga *cosine similarity* dalam upaya mencari kesamaan kata kunci [2]. Oleh karena itu, dengan menerapkan teknologi *machine learning* yaitu *content-based filtering* diharapkan dapat membantu memberikan rekomendasi yang tepat berdasarkan historis pengguna ketika meminjam buku di perpustakaan.
+Sistem rekomendasi dapat dimanfaatkan dalam kunjungan perpustakaan. Tujuan memanfaatkan sistem rekomendasi adalah supaya pengunjung dapat diberikan rekomendasi buku yang sesuai dengan minat bacaan pengunjung. Dengan menggunakan sistem ini, pengunjung dapat menemukan buku yang relevan sesuai dengan preferensi pengunjung. Hal ini dapat memudahkan pustakawan untuk lebih efektif dan efisien dalam memberikan rekomendasi kepada pengunjung perpustakaan [1]. Pustakawan memiliki tanggung jawab untuk memasukan data-data buku ke dalam sistem seperti informasi judul buku, pengarang, dan lain sebagainya untuk membuat sistem menjadi semakin *up-to-date*, selain itu pustakawan dapat memberikan panduang terkait bagaimana cara menggunakan sistem rekomendasi. Penerapan sistem rekomendasi menggunakan *content based filtering* sudah pernah diimplementasikan dalam sistem rekomendasi film oleh Muhammad Fajriansyah, dkk. Di dalam jurnal, dituliskan bahwa untuk memndapatkan hasil rekomendasi dengan algoritma *content based filtering* perlu dilakukan pembobotan menggunakan metode TF-IDF dan juga *cosine similarity* dalam upaya mencari kesamaan kata kunci [2]. Oleh karena itu, dengan menerapkan teknologi *machine learning* yaitu *content-based filtering* diharapkan dapat membantu memberikan rekomendasi yang tepat berdasarkan historis pengguna ketika meminjam buku di perpustakaan.
 
 ## Business Understanding
 
 ### Problem Statements
-- Bagaimana cara mengimplementasikan pembobotan menggunakan TF-IDF dalam dataset *Book Recommendation*?
-- Bagaimana cara menghitung derajat kesamaan antar judul buku dengan teknik *cosine similarity*?
-- Bagaimana cara mengimplementasikan algoritma *content based filtering*?
+- Bagaimana cara menghitung pembobotan menggunakan TF-IDF untuk setiap kata terhadap frekuensi kemunculan kata tersebut di dalam dataset *Book Recommendation*?
+- Bagaimana cara merepresentasikan vektorisasi judul buku sehingga dapat menentukan kemunculan kata dalam judul buku kemudian menggunakan vektor tersebut untuk menghitung derajat kesamaan antar judul buku dengan teknik *cosine similarity*?
+- Bagaimana cara mengimplementasikan algoritma *content based filtering* menggunakan TF-IDF dan *cosine similarity* untuk menghasilkan rekomendasi buku yang sesuai berdasarkan histori buku yang pernah dipinjam pengguna?
 
 ### Goals
-- Mengimplementasikan pembobotan menggunakan TF-IDF dalam dataset *Book Recommendation*.
-- Menghitung derajat kesamaan antar judul buku dengan teknik *cosine similarity*.
-- Mengimplementasikan algoritma *content based filtering*.
+- Menghitung pembobotan menggunakan TF-IDF untuk setiap kata terhadap frekuensi kemunculan kata tersebut di dalam dataset *Book Recommendation*.
+- Merepresentasikan vektorisasi judul buku sehingga dapat menentukan kemunculan kata dalam judul buku kemudian menggunakan vektor tersebut untuk menghitung derajat kesamaan antar judul buku dengan teknik *cosine similarity*.
+- Mengimplementasikan algoritma *content based filtering* menggunakan TF-IDF dan *cosine similarity* untuk menghasilkan rekomendasi buku yang sesuai berdasarkan histori buku yang pernah dipinjam pengguna.
 
 ### Solution statements
 - Membangun algoritma *content based filtering* dengan menggunakan TF-IDF untuk pembobotan dan menghitung derajat kesamaan menggunakan *cosine similarity*.
 
 ## Data Understanding
-Data yang digunakan dalam proyek ini bersumber dari [Kaggle](https://www.kaggle.com/datasets/arashnic/book-recommendation-dataset).
+Data yang digunakan dalam proyek ini bersumber dari [Kaggle](https://www.kaggle.com/datasets/arashnic/book-recommendation-dataset). Dataset terbut diperoleh dari **Amazon Web Services**, buku-buku yang dipakai adalah buku-buku yang memiliki ISBN valid dan tautan URL yang diberikan akan mengarah juga akan mengarah ke website Amazon.
 
 Di dalam proyek ini terdapat tiga buah dataset yang dapat digunakan yaitu:
 - Books.csv
@@ -37,23 +37,59 @@ Variabel-variabel pada `Books.csv` adalah sebagai berikut:
 - Image-URL-M: Cover buku berukuran sedang
 - Image-URL-L: Cover buku berukuran besar
 
+Tabel 1. Dataset `Books.csv`
+| ISBN       | Book-Title                                        | Book-Author          | Year-Of-Publication | Publisher                  | Image-URL-S                                       | Image-URL-M                                       | Image-URL-L                                       |
+|------------|---------------------------------------------------|----------------------|---------------------|----------------------------|---------------------------------------------------|---------------------------------------------------|---------------------------------------------------|
+| 0195153448 | Classical Mythology                               | Mark P. O. Morford   | 2002                | Oxford University Press    | http://images.amazon.com/images/P/0195153448.0... | http://images.amazon.com/images/P/0195153448.0... | http://images.amazon.com/images/P/0195153448.0... |
+| 0002005018 | Clara Callan                                      | Richard Bruce Wright | 2001                | HarperFlamingo Canada      | http://images.amazon.com/images/P/0002005018.0... | http://images.amazon.com/images/P/0002005018.0... | http://images.amazon.com/images/P/0002005018.0... |
+| 0060973129 | Decision in Normandy                              | Carlo D'Este         | 1991                | HarperPerennial            | http://images.amazon.com/images/P/0060973129.0... | http://images.amazon.com/images/P/0060973129.0... | http://images.amazon.com/images/P/0060973129.0... |
+| 0374157065 | Flu: The Story of the Great Influenza Pandemic... | Gina Bari Kolata     | 1999                | Farrar Straus Giroux       | http://images.amazon.com/images/P/0374157065.0... | http://images.amazon.com/images/P/0374157065.0... | http://images.amazon.com/images/P/0374157065.0... |
+| 0393045218 | The Mummies of Urumchi                            | E. J. W. Barber      | 1999                | W. W. Norton &amp; Company | http://images.amazon.com/images/P/0393045218.0... | http://images.amazon.com/images/P/0393045218.0... | http://images.amazon.com/images/P/0393045218.0... |
+| ...        | ...                                               | ...                  | ...                 | ...                        | ...                                               | ...                                               | ...                                               |
+
+<sub>271360 rows × 8 columns</sub>
+
 Variabel-variabel pada `Ratings.csv` adalah sebagai berikut:
 - User-ID: Kode unik dari pengguna yang memberikan penilaian
 - ISBN: Kode unik dari sebuah buku
 - Book-Rating: Penilaian buku nilai terendah dimulai dari angka 0
+
+Tabel 2. Dataset `Ratings.csv`
+| User-ID | ISBN       | Book-Rating |
+|---------|------------|-------------|
+| 276725  | 034545104X | 0           |
+| 276726  | 0155061224 | 5           |
+| 276727  | 0446520802 | 0           |
+| 276729  | 052165615X | 3           |
+| 276729  | 0521795028 | 6           |
+| ...     | ...        | ...         |
+
+<sub>1149780 rows × 3 columns</sub>
 
 Variabel-variabel pada `Users.csv` adalah sebagai berikut:
 - User-ID: Kode unik dari pengguna
 - Location: Lokasi pengguna
 - Age: Usia pengguna
 
+Tabel 3. Dataset `Users.csv`
+| User-ID | Location                           | Age  |
+|---------|------------------------------------|------|
+| 1       | nyc, new york, usa                 | NaN  |
+| 2       | stockton, california, usa          | 18.0 |
+| 3       | moscow, yukon territory, russia    | NaN  |
+| 4       | porto, v.n.gaia, portugal          | 17.0 |
+| 5       | farnborough, hants, united kingdom | NaN  |
+| ...     | ...                                | ...  |
+
+<sub>278858 rows × 3 columns</sub>
+
 ## Exploratory Data Analysis
 Tahapan yang akan dilakukan dalam mengeksplor dataset yaitu:
 - *Gathering Data*
 
-*Gathering Data* merupakan tahap awal sebelum membuat model *machine learning*, pada tahapan ini Penulis mencoba *load* dataset yang digunakan, menggabungkan dataset tersebut ke dalam `merged_df` dan memperhatikan secara general kolom serta baris seperti pada Tabel 1.
+*Gathering Data* merupakan tahap awal sebelum membuat model *machine learning*, pada tahapan ini Penulis mencoba *load* dataset yang digunakan, menggabungkan dataset tersebut ke dalam `merged_df` dan memperhatikan secara general kolom serta baris seperti pada Tabel 4.
 
-Tabel 1. Book Recommendation Dataset
+Tabel 4. Book Recommendation Dataset
 | User-ID | ISBN       | Book-Rating | Book-Title           | Book-Author | Year-Of-Publication | Publisher        | Image-URL-S                                       | Image-URL-M                                       | Image-URL-L                                       | Location              | Age  |
 |---------|------------|-------------|----------------------|-------------|---------------------|------------------|---------------------------------------------------|---------------------------------------------------|---------------------------------------------------|-----------------------|------|
 | 276725  | 034545104X | 0           | Flesh Tones: A Novel | M. J. Rose  | 2002                | Ballantine Books | http://images.amazon.com/images/P/034545104X.0... | http://images.amazon.com/images/P/034545104X.0... | http://images.amazon.com/images/P/034545104X.0... | tyler, texas, usa     | NaN  |
@@ -62,7 +98,7 @@ Tabel 1. Book Recommendation Dataset
 
 <sub>1031136 rows × 12 columns</sub>
 
-Kemudian hal lainnya yang perlu diperhatikan adalah perhitungan statistika dari dataset yang digunakan seperti pada Tabel 2, Tabel 3, dan Tabel 4.
+Kemudian hal lainnya yang perlu diperhatikan adalah perhitungan statistika dari dataset yang digunakan seperti pada Tabel 5, Tabel 6, dan Tabel 7.
 
 - Assessing Data
 Apakah ada missing value? Pada dataset yang digunakan dalam proyek ini terdapat missing value sebanyak 6 baris data.
@@ -78,7 +114,7 @@ Apakah ada data duplikat? Pada dataset yang digunakan dalam proyek ini tidak ter
   - 75% adalah kuartil ketiga.
   - Max adalah nilai maksimum.
 
-Tabel 2. Hasil Perhitungan Statistik Dataset pada `Books.csv`
+Tabel 5. Hasil Perhitungan Statistik Dataset pada `Books.csv`
 |       | Year-Of-Publication |
 |------:|---------------------|
 | count |        20000.000000 |
@@ -90,7 +126,7 @@ Tabel 2. Hasil Perhitungan Statistik Dataset pada `Books.csv`
 |   75% |         2001.000000 |
 |   max |         2011.000000 |
 
-Tabel 3. Hasil Perhitungan Statistik Dataset pada `Ratings.csv`
+Tabel 6. Hasil Perhitungan Statistik Dataset pada `Ratings.csv`
 |       | User-ID      | Book-Rating  |
 |------:|-------------:|--------------|
 | count | 1.149780e+06 | 1.149780e+06 |
@@ -102,7 +138,7 @@ Tabel 3. Hasil Perhitungan Statistik Dataset pada `Ratings.csv`
 |   75% | 2.110280e+05 | 7.000000e+00 |
 |   max | 2.788540e+05 | 1.000000e+01 |
 
-Tabel 4. Hasil Perhitungan Statistik Dataset pada `Users.csv`
+Tabel 7. Hasil Perhitungan Statistik Dataset pada `Users.csv`
 |       | User-ID      | Age           |
 |-------|--------------|---------------|
 | count | 278858.00000 | 168096.000000 |
@@ -131,9 +167,9 @@ Pada Gambar 3 merupakan salah satu contoh visualisasi dari hasil *grouping* `Boo
 ![rating_buku](https://github.com/sntdshrly/applied-machine-learning-projects/assets/71547739/27c0c568-7553-4a7f-bf13-039de8085450)
 Gambar 3. Rating Buku
 
-Pada Tabel 5 merupakan salah satu contoh visualisasi dari hasil *grouping* `Book-Rating` dan menghitung rata-rata rating yang diberikan rating dari 0-10, dari hasil visualisasi di bawah ini dapat diketahui bahwa lima judul buku yang diberikan rating tertinggi.
+Pada Tabel 8 merupakan salah satu contoh visualisasi dari hasil *grouping* `Book-Rating` dan menghitung rata-rata rating yang diberikan rating dari 0-10, dari hasil visualisasi di bawah ini dapat diketahui bahwa lima judul buku yang diberikan rating tertinggi.
 
-Tabel 5. Rating Buku Tertinggi
+Tabel 8. Rating Buku Tertinggi
 | Book-Title                                                                                                           | Rating |
 |----------------------------------------------------------------------------------------------------------------------|--------|
 | Dark Justice                                                                                                         | 10.0   |
@@ -142,9 +178,9 @@ Tabel 5. Rating Buku Tertinggi
 | Round the Corner (Sister Circle)                                                                                     | 10.0   |
 | 006781: Bk.1 Gags De Boule Et Bil                                                                                    | 10.0   |
 
-Pada Tabel 6 merupakan salah satu contoh visualisasi dari hasil *grouping* `Book-Rating` dan menghitung rata-rata rating yang diberikan rating dari 0-10, dari hasil visualisasi di bawah ini dapat diketahui bahwa lima judul buku yang diberikan rating terendah.
+Pada Tabel 9 merupakan salah satu contoh visualisasi dari hasil *grouping* `Book-Rating` dan menghitung rata-rata rating yang diberikan rating dari 0-10, dari hasil visualisasi di bawah ini dapat diketahui bahwa lima judul buku yang diberikan rating terendah.
 
-Tabel 6. Rating Buku Terendah
+Tabel 9. Rating Buku Terendah
 | Book-Title                                                                                                           | Rating |
 |----------------------------------------------------------------------------------------------------------------------|--------|
 | Dark Justice                                                                                                         | 10.0   |
@@ -156,22 +192,39 @@ Tabel 6. Rating Buku Terendah
 ## Data Preparation
 Tahapan yang akan dilakukan dalam mempersiapkan dataset yaitu:
 - Mengubah Tipe Data: Di dalam proyek ini diketahui bahwa value pada `Year-Of-Publication`ada yang bernilai 'DK Publishing Inc' dan 'Gallimard'. Sepertinya terdapat kesalahan input. Setelah dilihat, ternyata ada 3 baris data yang salah input. Oleh karena itu, pada proyek ini data-data yang salah input akan dibuang.
-- Mengkaji Kolom `Age`: Di dalam proyek ini, kolom `Age` memiliki *missing value* sebanyak 110.762 data dikarenakan jumlahnya yang begitu banyak maka kolom ini akan dibuang.
+- Mengkaji Kolom `Age`: Di dalam proyek ini, kolom `Age` memiliki *missing value* sebanyak 110.762 data. Untuk menangani *missing value* terdapat berbagai cara seperti mengisi dengan nilai tertentu misal dengan nilai 0 atau nilai rata-rata, bisa juga dengan menggunakan hasil prediksi dengan model tertentu seperti dengan algoritma *K-Nearest Neighbors* namun dikarenakan jumlah *missing value* yang begitu banyak dan juga kolom `Age` tidak akan digunakan dalam proyek ini maka kolom ini akan dibuang.
 - Mengkaji Dataset: Di dalam proyek ini terdapat 3 baris yang memiliki *missing value* oleh karena jumlah yang tidak begitu banyak, maka data yang memiliki *missing value* akan dibuang.
 - Mengonversi Data Series Menjadi Bentuk List: Tahap ini dilakukan untuk memasukan list tersebut ke dalam dictionary.
+
+  `isbn = books['ISBN'].tolist()`
+
+  Snippet di atas digunakan untuk mengkonversi kolom `ISBN` dari DataFrame `books` menjadi list. Proses yang sama dilakukan juga untuk kolom `Book-Title`, `Book-Author`, `Year-Of-Publication`, `Publisher`, `Image-URL-S`, `Image-URL-M`, dan `Image-URL-L` menggunakan metode tolist().
+
 - Membuat Dictionary: Digunakan untuk menentukan pasangan *key-value* pada dataset.
 
 ## Modeling
 Pada tahapan pemodelan ini, Penulis menggunakan algoritma *Content-based Filerting* untuk menyelesaikan permasalahan dalam proyek "Book Recommendation".
 
-- TF-IDF Vectorizer: Digunakan untuk melakukan pembobotan frekuensi kata tehadap *inverse document frequency*. Nilai di dalam vektor akan merepresentasikan seberapa penting kata tertentu terhadapt dokumennya.
-- Cosine Similarity: Digunakan untuk menghitung kesamaan antar vektor, sehingga apabila skor cosine semakin tinggi, maka buku tersebut semakin baik untuk direkomendasikan
-- Membangun Fungsi `content_based_filtering`: Membangun fungsi dengan menerapkan TF-IDF dan Cosine similarity, selanjutnya mengurutkan output yang dihasilkan sebanyak 5 rekomendasi buku dari nilai tertinggi ke terendah.
+- TF-IDF Vectorizer
+  - Menggunakan metode `fit_transform()` pada objek TF-IDF Vectorizer untuk melakukan pembobotan frekuensi kata menggunakan metode *Term Frequency-Inverse Document Frequency (TF-IDF)*. Hal ini menggunakan perhitungan frekuensi kata dalam setiap dokumen (TF) dan mengalinya dengan nilai inverse document frequency (IDF) untuk memberikan bobot yang lebih tinggi pada kata-kata yang jarang muncul secara umum di dalam dataset.
+  - Luaran yang dihasilkan berupa representasi vektor TF-IDF untuk setiap buku dalam dataset.
+
+- Cosine Similarity
+  - Menggunakan representasi vektor TF-IDF yang telah dibuat sebelumnya.
+  - Menggunakan fungsi *cosine similarity* untuk menghitung kesamaan antara dua vektor TF-IDF.
+  - Semakin tinggi nilai *cosine similarity* antara dua buku, semakin mirip atau serupa kedua buku tersebut.
+
+- Membangun Fungsi `content_based_filtering`
+  - Membangun fungsi dengan memanfaatkan langkah-langkah sebelumnya, yaitu TF-IDF Vectorizer dan perhitungan *cosine similarity*.
+  - Dalam fungsi ini, dilakukan pembobotan TF-IDF untuk setiap buku dalam dataset menggunakan TF-IDF Vectorizer.
+  - Kemudian perhitungan *cosine similarity* dilakukan antara vektor buku yang ingin direkomendasikan dengan vektor representasi buku lainnya dalam dataset.
+  - Hasil *cosine similarity* diurutkan dari nilai tertinggi ke terendah untuk mendapatkan buku-buku dengan kesamaan terbesar.
+  - Fungsi ini akan menghasilkan output berupa daftar rekomendasi buku berdasarkan kesamaan cosine similarity, dengan jumlah rekomendasi yang diinginkan (di sini Penulis menggunakan k = 5 ).
 
 ### Hasil Top-5 Recommendation
-Judul buku: "Chicken Soup for the Preteen Soul - 101 Stories of Changes, Choices and Growing Up for Kids, ages 10-13"
+Berikut merupakan salah satu contoh dari hasil rekomendasi yang diberikan oleh model dengan judul buku **"Chicken Soup for the Preteen Soul - 101 Stories of Changes, Choices and Growing Up for Kids, ages 10-13"**
 
-Tabel 7. Hasil Top-5 Recommendation
+Tabel 10. Hasil Top-5 Recommendation
 | Recommended Books                                 | Similarity |
 |---------------------------------------------------|------------|
 | A 6th Bowl of Chicken Soup for the Soul (Chick... | 1.0        |
@@ -180,28 +233,36 @@ Tabel 7. Hasil Top-5 Recommendation
 | A Second Chicken Soup for the Woman's Soul (Ch... | 1.0        |
 | Chicken Soup from the Soul of Hawaii: Stories ... | 1.0        |
 
+Dalam Tabel 10. terlihat bahwa model dapat memberikan rekomendasi buku serupa dari judul buku Chicken Soup for the Soul* dengan nilai kesamaan 1.0 atau sama dengan 100% serupa.
 
 ## Evaluation
-Dalam proyek ini, Penulis menggunakan beberapa metrik evaluasi untuk kasus rekomendasi, yaitu presisi, recall, MAP@0.5 seperti pada Tabel 8. Untuk *ground truth* yang digunakan menggunakan filtering seperti snippet di bawah ini:
+Dalam proyek ini, Penulis menggunakan beberapa metrik evaluasi untuk kasus rekomendasi, yaitu presisi, recall, MAP@0.5 seperti pada Tabel 11. Untuk *ground truth* yang digunakan menggunakan filtering seperti snippet di bawah ini:
 ```
 books[books['book_title'].str.contains("Chicken Soup")]['book_title'].tolist()
 ```
-Tabel 8. Hasil Evaluasi
+Tabel 11. Hasil Evaluasi
 
 | Presisi | Recall              | MAP@5               |
 |---------|---------------------|---------------------|
 | 1.0     | 0.13157894736842105 | 0.13157894736842105 |
 
-Melihat hasil presisi 1.0 dapat diartikan bahwa semua rekomendasi yang diberikan untuk judul buku "Chicken Soup for the Preteen Soul - 101 Stories of Changes, Choices and Growing Up for Kids, ages 10-13" benar-benar relevan. Sedangkan melihat hasil recall 0.13 berarti sistem rekomendasi Penulis dapat menemukan 13% dari buku-buku yang relecan. Hasil MAP@5 merupakan hasil rata-rata presisi pada 5 posisi teratas di dalam sistem rekomendasi dan di dalam proyek ini MAP@5 yang dihasilkan sebesar 13%.
+- Presisi
+  - Presisi mengukur proporsi dari item yang relevan (buku yang benar-benar relevan dengan buku referensi/ *ground truth*) di antara item yang direkomendasikan.
+  - Dalam proyek ini, presisi bernilai 1.0, yang berarti semua buku yang direkomendasikan untuk judul buku "Chicken Soup for the Preteen Soul - 101 Stories of Changes, Choices and Growing Up for Kids, ages 10-13" relevan secara tepat.
+  - Presisi yang tinggi menunjukkan bahwa rekomendasi yang diberikan oleh sistem memiliki tingkat keakuratan yang tinggi, dengan sebagian besar rekomendasi yang relevan.
+
+- Recall
+  - Recall mengukur proporsi dari item yang relevan yang berhasil ditemukan oleh sistem rekomendasi di antara seluruh item yang relevan.
+  - Dalam proyek ini, recall memiliki nilai 0.13, yang berarti sistem rekomendasi berhasil menemukan 13% dari buku-buku yang relevan dengan judul buku referensi.
+  - Recall yang tinggi menunjukkan bahwa sistem rekomendasi mampu menemukan sebagian besar buku yang relevan, dengan jumlah *false negative* (buku yang relevan tetapi tidak direkomendasikan) yang relatif rendah.
+
+- MAP@5 (Mean Average Precision at 5)
+  - MAP@5 adalah rata-rata dari presisi pada 5 posisi teratas dalam daftar rekomendasi.
+  - Dalam proyek ini, MAP@5 memiliki nilai 0.13, yang menunjukkan rata-rata presisi pada 5 buku teratas dalam daftar rekomendasi sebesar 13%.
+  - MAP@5 yang tinggi menunjukkan bahwa rekomendasi yang lebih relevan cenderung berada pada peringkat atas dalam daftar rekomendasi.
 
 ## Conclution
-Dengan mengimplementasikan salah satu algoritma machine learning yaitu *content-based filtering*, model dapat memberikan lima rekomendasi buku yang relevan dari histori judul buku yang pernah dipinjam oleh pengguna. Model belajar menggunakan pendekatan TF-IDF dan *cosine similarity*. Selain itu, Penulis juga berhasil mengukur performa model menggunakan metrik evaluasi yaitu dengan menggunakan presisi, recall, dan MAP.
-Model memperoleh:
-- Presisi: 1.0
-- Recall : 0.13157894736842105
-- MAP@5: 0.13157894736842105
-
-Data yang dipelajari oleh model berasal dari sumber data yang dapat diakses publik, yaitu Kaggle, dan Penulis telah melakukan beberapa tahap exploratory data analysis (EDA) untuk memahami karakteristik data tersebut. EDA yang dilakukan mencakup analisis statistik seperti perhitungan rata-rata, standar deviasi, nilai minimum, kuartil, dan maksimum untuk setiap kolom. Selain itu, visualisasi juga digunakan untuk memahami distribusi data menggunakan diagram batang.
+Proyek ini berhasil mengimplementasikan sisstem rekomendasi buku menggunakan metode *content-based filtering*. Model dapat memberikan rekomendasi buku yang relevan berdasarkan judul buku, dengan tingkat presisi yang tinggi. Namun, terdapat beberapa keterbatasan dalam proyek ini, misalnya dataset yang digunakan hanya sebanyak 20.000 data. Proyek ini dapat dikembangkan misalnya dengan penambahan jumlah data ataupun menggunakan teknik filtering lainnya seperti *collaborative fitlering*.
 
 ---
 **Daftar Pustaka**
