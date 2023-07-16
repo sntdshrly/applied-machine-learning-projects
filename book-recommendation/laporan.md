@@ -233,7 +233,7 @@ Tabel 10. Hasil Top-5 Recommendation
 | A Second Chicken Soup for the Woman's Soul (Ch... | 1.0        |
 | Chicken Soup from the Soul of Hawaii: Stories ... | 1.0        |
 
-Dalam Tabel 10. terlihat bahwa model dapat memberikan rekomendasi buku serupa dari judul buku Chicken Soup for the Soul* dengan nilai kesamaan 1.0 atau sama dengan 100% serupa.
+Dalam Tabel 10. terlihat bahwa model dapat memberikan rekomendasi buku serupa dari judul buku *Chicken Soup for the Soul* dengan nilai kesamaan 1.0 atau sama dengan 100% serupa.
 
 ## Evaluation
 Dalam proyek ini, Penulis menggunakan beberapa metrik evaluasi untuk kasus rekomendasi, yaitu presisi, recall, MAP@0.5 seperti pada Tabel 11. Untuk *ground truth* yang digunakan menggunakan filtering seperti snippet di bawah ini:
