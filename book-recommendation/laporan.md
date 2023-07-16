@@ -206,7 +206,7 @@ Tahapan yang akan dilakukan dalam mempersiapkan dataset yaitu:
 Pada tahapan pemodelan ini, Penulis menggunakan algoritma *Content-based Filerting* untuk menyelesaikan permasalahan dalam proyek "Book Recommendation".
 
 - TF-IDF Vectorizer
-  - Menggunakan metode `fit_transform()` pada objek TF-IDF Vectorizer untuk melakukan pembobotan frekuensi kata menggunakan metode *Term Frequency-Inverse Document Frequency (TF-IDF)*. Hal ini menggunakan perhitungan frekuensi kata dalam setiap dokumen (TF) dan mengalinya dengan nilai inverse document frequency (IDF) untuk memberikan bobot yang lebih tinggi pada kata-kata yang jarang muncul secara umum di dalam dataset.
+  - Menggunakan fungsi `fit_transform()` pada objek TF-IDF Vectorizer untuk melakukan pembobotan frekuensi kata menggunakan metode *Term Frequency-Inverse Document Frequency (TF-IDF)*. Hal ini menggunakan perhitungan frekuensi kata dalam setiap dokumen (TF) dan mengalinya dengan nilai inverse document frequency (IDF) untuk memberikan bobot yang lebih tinggi pada kata-kata yang jarang muncul secara umum di dalam dataset.
   - Luaran yang dihasilkan berupa representasi vektor TF-IDF untuk setiap buku dalam dataset.
 
 - Cosine Similarity
