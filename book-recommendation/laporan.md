@@ -196,7 +196,9 @@ Tahapan yang akan dilakukan dalam mempersiapkan dataset yaitu:
 - Mengkaji Dataset: Di dalam proyek ini terdapat 3 baris yang memiliki *missing value* oleh karena jumlah yang tidak begitu banyak, maka data yang memiliki *missing value* akan dibuang.
 - Mengonversi Data Series Menjadi Bentuk List: Tahap ini dilakukan untuk memasukan list tersebut ke dalam dictionary.
 
-  ```isbn = books['ISBN'].tolist()```
+  ```
+  isbn = books['ISBN'].tolist()
+  ```
 
   Snippet di atas digunakan untuk mengkonversi kolom `ISBN` dari DataFrame `books` menjadi list. Proses yang sama dilakukan juga untuk kolom `Book-Title`, `Book-Author`, `Year-Of-Publication`, `Publisher`, `Image-URL-S`, `Image-URL-M`, dan `Image-URL-L` menggunakan metode tolist().
 
