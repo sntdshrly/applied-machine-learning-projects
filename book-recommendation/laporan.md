@@ -178,17 +178,6 @@ Tabel 8. Rating Buku Tertinggi
 | Round the Corner (Sister Circle)                                                                                     | 10.0   |
 | 006781: Bk.1 Gags De Boule Et Bil                                                                                    | 10.0   |
 
-Pada Tabel 9 merupakan salah satu contoh visualisasi dari hasil *grouping* `Book-Rating` dan menghitung rata-rata rating yang diberikan rating dari 0-10, dari hasil visualisasi di bawah ini dapat diketahui bahwa lima judul buku yang diberikan rating terendah.
-
-Tabel 9. Rating Buku Terendah
-| Book-Title                                                                                                           | Rating |
-|----------------------------------------------------------------------------------------------------------------------|--------|
-| Dark Justice                                                                                                         | 10.0   |
-| California Historical Landmarks                                                                                      | 10.0   |
-| Isms: a dictionary of words ending in -ism, -ology, and -phobia,: With some similar terms, arranged in subject order | 10.0   |
-| Round the Corner (Sister Circle)                                                                                     | 10.0   |
-| 006781: Bk.1 Gags De Boule Et Bil                                                                                    | 10.0   |
-
 ## Data Preparation
 Tahapan yang akan dilakukan dalam mempersiapkan dataset yaitu:
 - Mengubah Tipe Data: Di dalam proyek ini diketahui bahwa value pada `Year-Of-Publication`ada yang bernilai 'DK Publishing Inc' dan 'Gallimard'. Sepertinya terdapat kesalahan input. Setelah dilihat, ternyata ada 3 baris data yang salah input. Oleh karena itu, pada proyek ini data-data yang salah input akan dibuang.
@@ -226,7 +215,7 @@ Pada tahapan pemodelan ini, Penulis menggunakan algoritma *Content-based Filerti
 ### Hasil Top-5 Recommendation
 Berikut merupakan salah satu contoh dari hasil rekomendasi yang diberikan oleh model dengan judul buku **"Chicken Soup for the Preteen Soul - 101 Stories of Changes, Choices and Growing Up for Kids, ages 10-13"**
 
-Tabel 10. Hasil Top-5 Recommendation
+Tabel 9. Hasil Top-5 Recommendation
 | Recommended Books                                 | Similarity |
 |---------------------------------------------------|------------|
 | A 6th Bowl of Chicken Soup for the Soul (Chick... | 1.0        |
@@ -235,14 +224,14 @@ Tabel 10. Hasil Top-5 Recommendation
 | A Second Chicken Soup for the Woman's Soul (Ch... | 1.0        |
 | Chicken Soup from the Soul of Hawaii: Stories ... | 1.0        |
 
-Dalam Tabel 10. terlihat bahwa model dapat memberikan rekomendasi buku serupa dari judul buku *Chicken Soup for the Soul* dengan nilai kesamaan 1.0 atau sama dengan 100% serupa.
+Dalam Tabel 9. terlihat bahwa model dapat memberikan rekomendasi buku serupa dari judul buku *Chicken Soup for the Soul* dengan nilai kesamaan 1.0 atau sama dengan 100% serupa.
 
 ## Evaluation
-Dalam proyek ini, Penulis menggunakan beberapa metrik evaluasi untuk kasus rekomendasi, yaitu presisi, recall, MAP@0.5 seperti pada Tabel 11. Untuk *ground truth* yang digunakan menggunakan filtering seperti snippet di bawah ini:
+Dalam proyek ini, Penulis menggunakan beberapa metrik evaluasi untuk kasus rekomendasi, yaitu presisi, recall, MAP@0.5 seperti pada Tabel 10. Untuk *ground truth* yang digunakan menggunakan filtering seperti snippet di bawah ini:
 ```
 books[books['book_title'].str.contains("Chicken Soup")]['book_title'].tolist()
 ```
-Tabel 11. Hasil Evaluasi
+Tabel 10. Hasil Evaluasi
 
 | Presisi | Recall              | MAP@5               |
 |---------|---------------------|---------------------|
